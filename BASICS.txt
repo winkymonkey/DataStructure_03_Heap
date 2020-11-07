@@ -1,0 +1,97 @@
+================
+	WHY HEAP
+================
+Using many data structures, we normally perform Insert, Find min/max, Delete min/max operations.
+Let us see how much time these take in different data structures.
+But none of these have optimized time complexity.
+That's why we will use Heap.
+
+						insert		find min	delete min
+----------------------------------------------------------
+unsorted array			O(1)		O(n)		O(n)
+sorted array			O(n)		O(1)		O(n)
+unsorted linked list	O(1)		O(n)		O(n)
+sorted linked list		O(n)		O(n)		O(1)
+
+heap					O(log n)	O(1)		O(log n)					
+
+
+
+
+
+====================
+	WHAT IS HEAP
+====================
+Heap can be implemented as an ALMOST COMPLETE binary/ternary/n-ary tree
+ALMOST COMPLETE means that while filling the leaves they should be filled from left to right
+
+MAX Heap: where root element is always maximum
+MIN Heap: where root element is always minimum
+
+
+
+
+
+=================================
+	HEAP & ITS DATA STRUCTURE
+=================================
+As heap looks like a binary tree(almost complete), we might think to define its data structure as linked list.
+But it will add more unnecessary overhead to operations.
+Rather we'll represent heap as an array.
+
+If 'i' is index of Parent:
+	index of LeftChild is ---- 2i+1
+	index of RightChild is --- 2i+2
+
+If 'k' is the index of an element:
+	index of Parent is ------- Floor((k-1)/2)
+
+
+If an array is already sorted in ascending order -->it represents a MIN HEAP
+If an array is already sorted in descending order -->it represents a MAX HEAP
+
+
+So in order to represent an array as heap, we might think to sort the array which indirectly turns out to be a heap.
+But the best possible sorting algorithm (merge sort) takes O(n) time.
+But we can have O(n) time if we use some algorithm to convert an array to heap.
+
+
+
+
+
+===================================
+	PROPERTIES IN A BINARY TREE
+===================================
+Height of a Node ------- number of edges from that node to the longest possible leaf
+Height of a Tree ------- height of the root
+
+Binary tree of height 'h' ----> There can be maximum of (2^h+1 - 1) nodes
+								There can be minimum of (h+1) nodes
+
+Binary tree of 'N' nodes -----> maximum height (Floor(LogN))
+
+Maximum number of nodes at height 'h' ------> Ceil(N / 2^h+1)
+
+
+
+
+
+
+===================================
+	VARIOUS OPERATIONS ON HEAP
+===================================
+
+			find max	delete max	insert	increase key		[find min]	[search random]	[delete random]
+-------------------------------------------------------------------------------------------------------------------------------
+Max Heap	O(1)		O(Logn)		O(Logn)	  O(Logn)				O(n)		O(n)			O(n)
+
+We can see that these operations are giving optimized result.
+But of we want to do any operations which are related to minimum element in the Max Heap, then it will take higher time.
+This is because Max Heap is optimized for operations related to maximum element.
+
+
+
+
+
+
+
