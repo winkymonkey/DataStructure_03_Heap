@@ -7,13 +7,10 @@ import java.util.Arrays;
  * When we have an array of heap structure, it's very easy to say that first element is the minimum.
  * But we can't simply delete that element because if we do so, the resulting tree will no longer be a heap. 
  * 
- * TIME --- O(Logn)
- * SPACE -- O(1)
- * 
  * ************************************************************************************
  */
 
-public class A02_deleteMaximum {
+public class A02A_deleteMaximum {
 	
 	public static void main(String[] args) {
 		int A[] = { 17, 15, 13, 9, 6, 5, 10, 4, 8, 3, 1 };		//heap structure
