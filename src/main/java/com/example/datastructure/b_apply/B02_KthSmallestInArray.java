@@ -6,12 +6,12 @@ package com.example.datastructure.b_apply;
  * ****************************************************************************************
  */
 
-public class B01_KthLargestInArray {
+public class B02_KthSmallestInArray {
 	/*
-	 * Build Max Heap (root is the MAX) 							//O(n) time
+	 * Build Min Heap (root is the MIN) 							//O(n) time
 	 * 
-	 * Now call extractMin() K times 								//K * O(Logn) time
-	 * After K operations K'th largest element will become root
+	 * Now call extractMax() K times 								//K * O(Logn) time
+	 * After K operations K'th smallest element will become root
 	 * 
 	 * So total time  = O(n)+O(KLogn)
 	 * 

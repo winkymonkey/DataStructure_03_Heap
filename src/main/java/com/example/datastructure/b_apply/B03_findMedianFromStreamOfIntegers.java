@@ -18,7 +18,7 @@ package com.example.datastructure.b_apply;
  * *****************************************************************************
  */
 
-public class B02_findMedianFromStreamOfIntegers {
+public class B03_findMedianFromStreamOfIntegers {
 	/*
 	 * --------------------
 	 * ---INSERTION SORT---
