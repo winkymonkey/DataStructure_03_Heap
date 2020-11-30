@@ -51,7 +51,7 @@ If an array is already sorted in descending order -->it represents a MAX HEAP
 
 
 So in order to represent an array as heap, we might think to sort the array which indirectly turns out to be a heap.
-But the best possible sorting algorithm (merge sort) takes O(n) time.
+But the best possible sorting algorithm (merge sort) takes O(nLogn) time.
 But we can have O(n) time if we use some algorithm to convert an array to heap.
 
 
@@ -63,7 +63,7 @@ Max Heap	O(1)		O(Logn)		O(Logn)	  O(Logn)		|		O(n)		O(n)			O(n)
 
 
 We can see that these operations are giving optimized result.
-But of we want to do any operations which are related to minimum element in the Max Heap, then it will take higher time.
+But if we want to do any operations which are related to minimum element in the Max Heap, then it will take higher time.
 This is because Max Heap is optimized for operations related to maximum element.
 
 
@@ -78,14 +78,23 @@ Height of a Node ------- number of edges from that node to the longest possible 
 Height of a Tree ------- height of the root
 
 
-Binary tree of height 'h'
-	Maximum possible node count ---- (2^h+1 - 1)
-	Minimum possible node count ---- (h+1)
+        1           ---- 1's Height=3
+      /   \
+     2     3        ---- 2's Height=2	3's Height=1
+    / \   / \
+   4   5 6   7      ---- 4's Height=1	5's Height=0	6's Height=0	7's Height=0
+  / \
+ 8   9              ---- 8's Height=0	9's Height=0
 
-Binary tree of 'N' nodes
-	Maximum height ----------------- Floor(LogN)
 
-Maximum nodes at height 'h' -------- Ceil(N / 2^h+1)
+
+Binary tree of height 'h' ----- maximum node count (2^h+1 - 1) 
+								minimum node count (h + 1)
+
+Binary tree of 'N' nodes ------ maximum height (N)
+								minimum height (Floor(LogN))
+
+Binary tree of at height 'h' -- maximum number of nodes (CEIL(N / 2^h+1))
 
 
 
