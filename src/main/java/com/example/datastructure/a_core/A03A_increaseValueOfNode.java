@@ -20,8 +20,8 @@ public class A03A_increaseValueOfNode {
 	}
 	
 	
-	private static void increaseKey(int A[], int i, int value) {
-		A[i] = value;
+	private static void increaseKey(int A[], int i, int newValue) {
+		A[i] = newValue;
 		
 		while (i>0 && A[(i-1)/2] < A[i]) {		//if parent is less than child
 			//swap A[(i-1)/2] and A[i]			//swap parent and child
