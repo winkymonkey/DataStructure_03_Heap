@@ -16,6 +16,7 @@ public class A03A_increaseValueOfNode {
 		//index		0   1   2   3  4  5   6  7  8  9  10
 		
 		increaseKey(A, 7, 12);
+		System.out.println(Arrays.toString(A));
 	}
 	
 	
@@ -23,14 +24,13 @@ public class A03A_increaseValueOfNode {
 		A[i] = value;
 		
 		while (i>0 && A[(i-1)/2] < A[i]) {		//if parent is less than child
-			//swap A[(i-1)/2] and A[i]
+			//swap A[(i-1)/2] and A[i]			//swap parent and child
 			int temp = A[(i-1)/2];
 			A[(i-1)/2] = A[i];
 			A[i] = temp;
 			
-			i = (i-1)/2;
+			i = (i-1)/2;						//go to parent
 		}
-		System.out.println(Arrays.toString(A));
 	}
 	
 }
