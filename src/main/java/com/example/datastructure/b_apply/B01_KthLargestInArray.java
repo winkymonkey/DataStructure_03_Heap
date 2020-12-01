@@ -10,10 +10,11 @@ public class B01_KthLargestInArray {
 	/*
 	 * Build Max Heap (root is the MAX) 							//O(n) time
 	 * 
-	 * Now call extractMin() K times 								//K * O(Logn) time
+	 * Now call deleteMax() K times 								//K * O(Logn) time
 	 * After K operations K'th largest element will become root
 	 * 
-	 * So total time  = O(n)+O(KLogn)
+	 * So total time
+	 * = O(n) + O(KLogn)
 	 * 
 	 */
 }

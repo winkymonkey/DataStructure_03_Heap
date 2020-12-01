@@ -10,7 +10,7 @@ public class A02B_deleteMaximum_complexity {
 	 * ---------------
 	 * TIME COMPLEXITY
 	 * ---------------
-	 * Time taken is = time taken up to max_heapify call + time taken inside max_heapify call
+	 * Time taken is = time taken to swap root and last node + time taken max_heapify the new root
 	 * 				= O(1) + O(Logn)
 	 * 				= O(Logn)
 	 * 

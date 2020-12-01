@@ -15,20 +15,8 @@ public class A01A_buildMaxHeap {
 		int A[] = { 1, 6, 9, 8, 7, 10, 3, 12, 4, 14 };
 		//index		0  1  2  3  4  5   6  7   8  9
 		
-		/*
-		 *        VALUE                 INDEX
-		 *          1                     0
-		 *       /     \               /     \
-		 *      6       9             1       2
-		 *    /   \    / \          /   \    / \
-		 *   8     7  10  3        3     4  5   6
-		 *  / \   /               / \   /
-		 * 12  4 14              7   8 9
-		 * 
-		 */
-		
-		System.out.println(Arrays.toString(A));
 		buildMaxHeap(A);
+		System.out.println(Arrays.toString(A));
 	}
 	
 	
@@ -36,7 +24,6 @@ public class A01A_buildMaxHeap {
 		int n = A.length;
 		for (int i = (n/2)-1; i >= 0; i--) { 			// non-leaves are from 0 to Floor(length/2)-1
 			max_heapify(A, n, i); 						// leaves are from Floor(length/2) to length-1
-			System.out.println(Arrays.toString(A));
 		}
 	}
 	

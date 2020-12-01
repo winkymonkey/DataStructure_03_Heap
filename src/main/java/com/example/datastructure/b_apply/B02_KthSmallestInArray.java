@@ -10,10 +10,11 @@ public class B02_KthSmallestInArray {
 	/*
 	 * Build Min Heap (root is the MIN) 							//O(n) time
 	 * 
-	 * Now call extractMax() K times 								//K * O(Logn) time
+	 * Now call deleteMin() K times 								//K * O(Logn) time
 	 * After K operations K'th smallest element will become root
 	 * 
-	 * So total time  = O(n)+O(KLogn)
+	 * So total time
+	 * = O(n) + O(KLogn)
 	 * 
 	 */
 }

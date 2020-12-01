@@ -32,11 +32,11 @@ public class B03_findMedianFromStreamOfIntegers {
 	 * ---USING HEAP---
 	 * ----------------
 	 * Use 2 heaps
-	 * 	- A MinHeap that contains the larger half of the elements, with the minimum element at the root
 	 * 	- A MaxHeap that contains the smaller half of the elements, with the maximum element at the root
+	 *  - A MinHeap that contains the larger half of the elements, with the minimum element at the root
 	 * 
 	 * 
-	 * For the first two incoming elements 
+	 * For the first two incoming elements
 	 * 	- add smaller one to the MaxHeap
 	 * 	- add bigger one to the MinHeap
 	 * 
@@ -44,8 +44,10 @@ public class B03_findMedianFromStreamOfIntegers {
 	 * Then process stream data one by one,
 	 * 	- if (incoming element < MaxHeap root) 
 	 * 		add it to MaxHeap
+	 * 		balance the heap
 	 * 	- else
 	 * 		add it to MinHeap
+	 * 		balance the heap
 	 * 
 	 * 
 	 * As soon as an element is added to any heap we have to balance the heap
