@@ -18,7 +18,7 @@ package com.example.datastructure.b_apply;
  * *****************************************************************************
  */
 
-public class B03_findMedianFromStreamOfIntegers {
+public class B03A_findMedianFromStreamOfIntegers {
 	/*
 	 * --------------------
 	 * ---INSERTION SORT---
@@ -36,36 +36,37 @@ public class B03_findMedianFromStreamOfIntegers {
 	 *  - A MinHeap that contains the larger half of the elements, with the minimum element at the root
 	 * 
 	 * 
-	 * For the first two incoming elements
-	 * 	- add smaller one to the MaxHeap
-	 * 	- add bigger one to the MinHeap
-	 * 
-	 * 
-	 * Then process stream data one by one,
-	 * 	- if (incoming element < MaxHeap root) 
-	 * 		add it to MaxHeap
-	 * 		balance the heap
-	 * 	- else
-	 * 		add it to MinHeap
-	 * 		balance the heap
-	 * 
-	 * 
-	 * As soon as an element is added to any heap we have to balance the heap
-	 * 	- if (Number of elements in MaxHeap - Number of elements in MinHeap) > 1
-	 * 		remove root of MaxHeap and add it to MinHeap
-	 *  
-	 *  - else if (Number of elements in MinHeap - Number of elements in MaxHeap) > 1
-	 * 		remove root of MinHeap and add it to MaxHeap
-	 * 
-	 * 	- else
-	 * 		Nothing to do
-	 * 
-	 * 
-	 * Then at any given time you can calculate median like this:
-	 *  - If the heaps contain equal amount of elements
-	 * 		median = (root of maxHeap + root of minHeap) / 2
-	 *  - else
-	 *  	median = root of the heap with more elements
+	 * FOR each incoming elements {
+	 *    IF (incomingElement < currentMedian) {
+	 *       add it to the end of MaxHeap
+	 *       if (MaxHeap end element > MaxHeap root)
+	 *          swap them									//making sure the MaxHeap has maximum value at the root
+	 *    }
+	 *    ELSE {
+	 *       add it to the end of MinHeap
+	 *       IF (MinHeap end element < MinHeap root)
+	 *          swap them									//making sure the MinHeap has minimum value at the root
+	 *    }
+	 *    
+	 *    
+	 *    //balancing both the heaps
+	 *    IF (Number of elements in MaxHeap - Number of elements in MinHeap > 1) {
+	 *       remove root of MaxHeap and add it to the end of MinHeap
+	 *       IF (MinHeap end element < MinHeap root)
+	 *       	swap them
+	 *    }
+	 *    ELSE IF (Number of elements in MinHeap - Number of elements in MaxHeap > 1) {
+	 *       remove root of MinHeap and add it to the end of MaxHeap
+	 *       IF (MaxHeap end element > MaxHeap root)
+	 *          swap them
+	 *    }
+	 *    
+	 *    
+	 *    IF both the heaps contain equal amount of elements
+	 *       median = (root of maxHeap + root of minHeap) / 2
+	 *    ELSE
+	 *       median = root of the heap with more elements
+	 * }
 	 * 
 	 */
 }
