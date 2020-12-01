@@ -12,19 +12,22 @@ import java.util.Arrays;
 public class A01A_buildMaxHeap {
 
 	public static void main(String[] args) {
-		int A[] = { 1, 14, 10, 8, 7, 9, 3, 2, 4, 6 };
-		//index		0  1   2   3  4  5  6  7  8  9
+		int A[] = { 1, 6, 9, 8, 7, 10, 3, 12, 4, 14 };
+		//index		0  1  2  3  4  5   6  7   8  9
 		
 		/*
-		 *         1
-		 *       /   \
-		 *     14     10
-		 *    /  \    / \
-		 *   8    7  9   3
-		 *  / \  /
-		 * 2   4 6
+		 *        VALUE                 INDEX
+		 *          1                     0
+		 *       /     \               /     \
+		 *      6       9             1       2
+		 *    /   \    / \          /   \    / \
+		 *   8     7  10  3        3     4  5   6
+		 *  / \   /               / \   /
+		 * 12  4 14              7   8 9
+		 * 
 		 */
 		
+		System.out.println(Arrays.toString(A));
 		buildMaxHeap(A);
 	}
 	
@@ -32,15 +35,13 @@ public class A01A_buildMaxHeap {
 	private static void buildMaxHeap(int A[]) {
 		int n = A.length;
 		for (int i = (n/2)-1; i >= 0; i--) { 			// non-leaves are from 0 to Floor(length/2)-1
-			max_heapify(A, i); 							// leaves are from Floor(length/2) to length-1
+			max_heapify(A, n, i); 						// leaves are from Floor(length/2) to length-1
+			System.out.println(Arrays.toString(A));
 		}
-		System.out.println(Arrays.toString(A));
 	}
 	
 	
-	private static void max_heapify(int A[], int i) {
-		int heapsize = A.length;
-		
+	private static void max_heapify(int A[], int heapsize, int i) {
 		int largest = i;
 		int l = 2*i + 1;
 		int r = 2*i + 2;
@@ -57,8 +58,102 @@ public class A01A_buildMaxHeap {
 			A[i] = A[largest];
 			A[largest] = temp;
 
-			max_heapify(A, largest);
+			max_heapify(A, heapsize, largest);
 		}
 	}
 	
+	
+	/*
+	 * --------
+	 * EXAMPLE:
+	 * --------
+	 * INPUT
+	 *          1
+	 *       /     \
+	 *      6       9
+	 *    /   \    / \
+	 *   8     7  10  3
+	 *  / \   /
+	 * 12  4 14
+	 * 
+	 * HEAPIFY FOR 7 --- so swap 7 with 14
+	 * 
+	 * 
+	 *          1
+	 *       /     \
+	 *      6       9
+	 *    /   \    / \
+	 *   8    14  10  3
+	 *  / \   /
+	 * 12  4 7
+	 * 
+	 * HEAPIFY FOR 8 --- so swap 8 with 12
+	 * 
+	 * 
+	 *          1
+	 *       /     \
+	 *      6       9
+	 *    /   \    / \
+	 *   12   14  10  3
+	 *  / \   /
+	 * 8   4 7
+	 * 
+	 * HEAPIFY FOR 9 --- so swap 9 with 10
+	 * 
+	 * 
+	 *          1
+	 *       /     \
+	 *      6      10
+	 *    /   \    / \
+	 *   12   14  9   3
+	 *  / \   /
+	 * 8   4 7
+	 * 
+	 * HEAPIFY FOR 6 --- so swap 6 with 14 --- then swap 6 with 7
+	 * 
+	 * 
+	 *          1
+	 *       /     \
+	 *     14      10
+	 *    /   \    / \
+	 *   12   6   9   3
+	 *  / \   /
+	 * 8   4 7
+	 * 
+	 *          1
+	 *       /     \
+	 *     14      10
+	 *    /   \    / \
+	 *   12   7   9   3
+	 *  / \   /
+	 * 8   4 6
+	 * 
+	 * HEAPIFY FOR 1 --- so swap 1 with 14 --- then swap 1 with 12 --- then swap 1 with 8
+	 * 
+	 * 
+	 *         14
+	 *       /     \
+	 *      1      10
+	 *    /   \    / \
+	 *   12   7   9   3
+	 *  / \   /
+	 * 8   4 6
+	 * 
+	 *         14
+	 *       /     \
+	 *     12      10
+	 *    /   \    / \
+	 *   1    7   9   3
+	 *  / \   /
+	 * 8   4 6
+	 * 
+	 *         14
+	 *       /     \
+	 *     12      10
+	 *    /   \    / \
+	 *   8    7   9   3
+	 *  / \   /
+	 * 1   4 6
+	 * 
+	 */
 }
