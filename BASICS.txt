@@ -40,10 +40,9 @@ As heap looks like a binary tree(almost complete), we might think to define its 
 But that will add more unnecessary overhead to operations.
 That's why we will represent heap as an array.
 
-If 'i' is the index of a Node:
-	index of its LeftChild is ---- 2i+1
-	index of its RightChild is --- 2i+2
-	index of its Parent is ------- Floor((i-1)/2)
+Node at i'th index --- index of its LeftChild  = 2i+1
+Node at i'th index --- index of its RightChild = 2i+2
+Node at i'th index --- index of its Parent     = Floor((i-1)/2)
 
 
 If an array is already sorted in ascending order -->it represents a MIN HEAP
@@ -88,13 +87,13 @@ Height of a Tree ------- height of the root
 
 
 
-Binary tree of height 'h' ----- maximum node count (2^h+1 - 1) 
-								minimum node count (h + 1)
+Binary tree of height 'h' ----- maximum node count = 2^h+1 - 1
+								minimum node count = h + 1
 
-Binary tree of 'N' nodes ------ maximum height (N)
-								minimum height (Floor(LogN))
+Binary tree of 'N' nodes ------ maximum height = N
+								minimum height = Floor(LogN)
 
-Binary tree of at height 'h' -- maximum number of nodes (CEIL(N / 2^h+1))
+Binary tree of at height 'h' -- maximum number of nodes = CEIL(N / 2^h+1)
 
 
 
